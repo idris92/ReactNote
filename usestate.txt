@@ -9,6 +9,7 @@ const practiceState = ()=>{
     // to update this state we call the setAge function and update the value which inturn update the age
     setAge(5); // this will update our age to 5;
      console.log(age); //output 5
+     return()
 }
 
 export default practiceState;
