@@ -1,0 +1,14 @@
+A useState is a hook that contain a variable that hold an inital value and a function that can update the initial value, 
+syntax: const [initalValue,setInitialValue ] = useState();
+Example:
+import {useState} from 'react';
+
+const practiceState = ()=>{
+    const [age, setAge] = useState(0) //this state is initalized to be zero
+
+    // to update this state we call the setAge function and update the value which inturn update the age
+    setAge(5); // this will update our age to 5;
+     console.log(age); //output 5
+}
+
+export default practiceState;
