@@ -1,0 +1,30 @@
+The Effect hook (useEffect) give the ability to perform side on a functional componenets
+e.g subscription,data fetching etc. useEffect serve the same purpose as componentDidMount,
+componentDidUpdate and componentWillUnmount in React classes.
+
+To use useEffect in react project, we import it from react:
+
+import {useEffect} from 'react';
+
+Note: Effect are declared inside the components so they can have access to its props and state.
+
+syntax:
+ useEffect(()=>{
+     //first section
+     render()=>{
+         //second section
+     }
+ }, [])
+
+
+React run the effect at the first section any time the page is load up which work as 
+componentDidMount in class components.
+React run the effect at the second section when the page unmount(close/not rendered)
+work as a componentWillUnmount in class components.
+The last part of the useEffect is the square bracket which serves as a dependency
+
+Note: 
+
+When the dependency is not specified the effect will only run once.
+When the dependency is specified the effect will run  the first time and anytime there is an update to that dependency.
+When there is no bracket, the useEffect will rerender everytime.
