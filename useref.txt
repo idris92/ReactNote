@@ -1,0 +1,50 @@
+useRef Hooks: this hooks give us the ability to manipulate the DOM, remember the 
+DOM manipulation in javascript: document.querySelector, document.getElementById
+getElementByClassName etc useRef also help get the reference of an element which
+can be store in a variable, and with this you  apply it to other element 
+or make changes to the  current element properties e.g you can change the color of the
+element, the style etc.
+Note: 1. The main use of useRef is to store the reference of an element, not the value.
+To store the value you use UseState hooks.
+2. No matter the changes made with useRef, your DOM will never re-render, useState re-render
+the DOM element.
+3. You dont create an initialValue for a useRef, useRef return a mutable object
+and the object have a .current property, its useState that takes in string,
+number, object, array etc as initialValue.
+
+Things to always remember: 
+1. useRef is an object and the object has a .current property
+2. useRef doesnt re-render the DOM element no matter the time its manipulated
+
+
+Although you can use useRef to store value but that isnt what its design for,
+useState can be used to store value.
+
+code:
+
+import {useRef} from 'react'
+
+
+const app=()=> {
+  const inputElement = useRef();
+  const onButtonClick = () => {
+    console.log(input.current);
+    inputEl.current.style.width="400px";
+  };
+  return (
+    <>
+      <input ref={inputElement} type="text" style={{width:"100px"}}/>
+      <button onClick={onButtonClick}>Focus the input</button>
+    </>
+  );
+}
+
+
+1. import {useRef} from 'react' : This is line is used to import useRef hook from react;
+2. const inputElement = useRef(); : We are assigning the useRef function to a constant inputElement
+3. onButtonClick is an arrow function which is triggered by the button click
+4. console.log(input.current); : this will output the element with the reference,
+output: <input type="text" style={{width:"100px"}} /> because this is the element with the ref.
+5. inputEl.current.style.width="400px"; This will change the width of the input box from 100px to 400px
+
+
