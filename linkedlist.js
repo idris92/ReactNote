@@ -54,6 +54,22 @@ class LinkedList2 {
 		this.length++;
 	}
 
+     //get an item at an index
+
+     getAtIndex(index){
+        let current = this.head;
+        let count = 0;
+        if(index > this.length){
+            return
+        }
+
+        while(count < index){
+            current = current.next;
+            count++
+        }
+        console.log(current.data)
+    }
+
 	//print the Node
 	print() {
 		let current = this.head;
@@ -72,5 +88,7 @@ ll2.insertAtEnd(1500);
 ll2.insertAt(800, 3);
 ll2.insertAt(100, 0);
 ll2.insertAt(1200, 9);
+ll2.getAtIndex(3)
+ll2.getAtIndex(0)
 
 ll2.print();
