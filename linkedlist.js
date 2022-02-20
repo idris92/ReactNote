@@ -95,6 +95,12 @@ class LinkedList2 {
 		}
 	}
 
+	//clear linkedlist
+	clearlist() {
+		this.head = null;
+		this.length = 0;
+	}
+
 	//print the Node
 	print() {
 		let current = this.head;
@@ -117,5 +123,5 @@ ll2.getAtIndex(3);
 ll2.getAtIndex(0);
 ll2.removeAt(0);
 ll2.removeAt(2);
-
+ll2.clearlist(); //this return null because the list was cleared
 ll2.print();
