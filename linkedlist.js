@@ -54,21 +54,46 @@ class LinkedList2 {
 		this.length++;
 	}
 
-     //get an item at an index
+	//get an item at an index
 
-     getAtIndex(index){
-        let current = this.head;
-        let count = 0;
-        if(index > this.length){
-            return
-        }
+	getAtIndex(index) {
+		let current = this.head;
+		let count = 0;
+		if (index > this.length) {
+			return;
+		}
 
-        while(count < index){
-            current = current.next;
-            count++
-        }
-        console.log(current.data)
-    }
+		while (count < index) {
+			current = current.next;
+			count++;
+		}
+		console.log(current.data);
+	}
+
+	//remove from index
+	removeAt(index) {
+		//checking if index is out of range
+		if (index > 0 && index > this.length) {
+			return;
+		}
+
+		//if index is zero
+		let current = this.head;
+		let previous;
+		let count = 0;
+
+		if (index === 0) {
+			this.head = current.next;
+		} else {
+			while (count < index) {
+				previous = current;
+				current = current.next;
+				count++;
+			}
+			previous.next = current.next;
+			this.length--;
+		}
+	}
 
 	//print the Node
 	print() {
@@ -88,7 +113,9 @@ ll2.insertAtEnd(1500);
 ll2.insertAt(800, 3);
 ll2.insertAt(100, 0);
 ll2.insertAt(1200, 9);
-ll2.getAtIndex(3)
-ll2.getAtIndex(0)
+ll2.getAtIndex(3);
+ll2.getAtIndex(0);
+ll2.removeAt(0);
+ll2.removeAt(2);
 
 ll2.print();
